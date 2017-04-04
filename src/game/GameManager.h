@@ -22,6 +22,7 @@
 #include "../buildings/DropPoint.h"
 
 #include "../inventory/WeaponDrop.h"
+#include "../inventory/BarricadeDrop.h"
 
 #include "GameHashMap.h"
 #include <memory>
@@ -140,6 +141,7 @@ private:
     GameHashMap<int32_t, Zombie> zombieManager;
     GameHashMap<int32_t, Turret> turretManager;
     GameHashMap<int32_t, WeaponDrop> weaponDropManager;
+    GameHashMap<int32_t, BarricadeDrop> barricadeDropManager;
     GameHashMap<int32_t, std::shared_ptr<Weapon>> weaponManager;
     GameHashMap<int32_t, Barricade> barricadeManager;
     GameHashMap<int32_t, Wall> wallManager;

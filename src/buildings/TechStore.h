@@ -16,6 +16,8 @@ public:
     int32_t purchase(int num);//creates Tech and Tech drop for user
     int selectTech();//selected what Tech the user wants
     int32_t createTech(int num, float x, float y);
+    int32_t createTurret(float x, float y);
+    int32_t createBarricadeDrop(float x, float y);
 
 private:
 

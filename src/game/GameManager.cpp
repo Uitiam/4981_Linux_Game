@@ -51,7 +51,7 @@ void GameManager::renderObjects(const SDL_Rect& cam) {
     for (const auto& m : marineManager) {
         if (m.second.getX() - cam.x < cam.w && m.second.getY() - cam.y < cam.h) {
             Renderer::instance().render(m.second.getRelativeDestRect(cam), TEXTURES::MARINE,
-                m.second.getSrcRect()); 
+                m.second.getSrcRect());
         }
     }
 
@@ -134,7 +134,7 @@ int32_t GameManager::createMarine() {
     SDL_Rect moveRect = temp;
     SDL_Rect projRect = temp;
     SDL_Rect damRect = temp;
-
+int32_t createTurret(float x, float y);
     marineManager.emplace(id, Marine(id, marineRect, moveRect, projRect, damRect));
     return id;
 }
