@@ -34,10 +34,9 @@ int32_t WeaponStore::purchase(const int num){
         const int32_t weaponId = createWeapon(num);
 
         DropPoint dp = gm->getDropPoint(dropPId);
-        const float x = dp.getCoord().first;
-        const float y = dp.getCoord().second;
+        const std::pair<float, float> coord = dp.getCoord();
 
-        const int32_t wDropId = gm->createWeaponDrop(x, y, weaponId);
+        const int32_t wDropId = gm->createWeaponDrop(coord.first, coord.second, weaponId);
 
         logv("Purchased From WeaponStore\n");
 
