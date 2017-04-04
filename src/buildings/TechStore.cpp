@@ -11,7 +11,7 @@
 int32_t id of the Store
 SDL_RECT dest the rect of the store
 maitiu March 16*/
-TechStore::TechStore(int32_t id, const SDL_Rect dest): Store(id, dest){
+TechStore::TechStore(const int32_t id, const SDL_Rect dest, const SDL_Rect pickupSize): Store(id, dest, pickupSize){
 
 }
 
@@ -25,24 +25,35 @@ TechStore::~TechStore(){
  * Creates
  */
 int32_t TechStore::purchase(int num){
-    /*GameManager *gm = GameManager::instance();
+    GameManager *gm = GameManager::instance();
     if(gm->checkFreeDropPoints()){
         const int32_t dropPId = gm->getFreeDropPointId();
-        const int32_t weaponId = createWeapon(num);
-
         DropPoint dp = gm->getDropPoint(dropPId);
-        const float x = dp.getCoord().first;
-        const float y = dp.getCoord().second;
+        const std::pair<float, float> coord = dp.getCoord();
 
-        const int32_t wDropId = gm->createWeaponDrop(x, y, weaponId);
+        //const int32_t id = createTech(num, coord.first, coord.second);
 
-        logv("Purchased From WeaponStore\n");
+        logv("Purchased From TechStore\n");
 
-        if(gm->weaponDropExists(wDropId)){
-            gm->getWeaponDrop(wDropId).setDropPoint(dropPId);
-        }
-        return weaponId;
+        return-1;
     }
-    logv("NO OPEN DROP POINTS!!!\n");*/
+    logv("NO OPEN DROP POINTS!!!\n");
     return -1;
+}
+
+int32_t TechStore::createTech(int num, float x, float y){
+    GameManager *gm = GameManager::instance();
+    int32_t id = gm->generateID();
+    switch(num){
+        case 1:
+            gm->addWeapon(std::dynamic_pointer_cast<Weapon>(std::make_shared<Rifle>(id)));
+            break;
+        case 2:
+        //make barricade and BArricade Drop
+            break;
+        default:
+            return -1;//does not exist
+    }
+
+    return id;
 }

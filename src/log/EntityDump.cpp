@@ -4,9 +4,9 @@
 
 --
 -- FUNCTIONS:
--- void dumpEntityPositions(const Player* p);
--- std::pair<float, float> getCoordinates(const Entity* e);
--- void printEntityPositions(std::string entityName, int32_t id, const Entity &e, std::ofstream &entitydump);
+--void dumpEntityPositions(const Player* p);
+--std::pair<float, float> getCoordinates(const Entity* e);
+--void printEntityPositions(std::string entityName, int32_t id, const Entity &e, std::ofstream &entitydump);
 --
 -- DATE: March 16, 2008
 --

@@ -9,12 +9,13 @@
 
 class TechStore: public Store{
 public:
-    TechStore(int32_t id, const SDL_Rect dest);
+    TechStore(const int32_t id, const SDL_Rect dest, const SDL_Rect pickupSize);
 
     ~TechStore();
 
     int32_t purchase(int num);//creates Tech and Tech drop for user
     int selectTech();//selected what Tech the user wants
+    int32_t createTech(int num, float x, float y);
 
 private:
 
