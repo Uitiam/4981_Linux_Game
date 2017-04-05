@@ -23,7 +23,6 @@
 #include <iostream>
 #include "../buildings/DropPoint.h"
 
-
 /*Created by Maitiu Morton 4/3/2017
  *Loops through each manager and writes there information to
  *the EntityDumpLog.txt
@@ -120,6 +119,6 @@ void printEntityPositions(std::string entityName, int32_t id, const Entity &e, s
         std::pair<float, float> moveCoord = getMoveCoordinates(&e);
         entityDump << entityName << " id:" << id << "\n\t DestRect: " << "X:" << destCoord.first
             << " Y:" << destCoord.second << "\n\t SrcRect: " << "X:" << srcCoord.first
-                << " Y:" << srcCoord.second<< "\n\t MoveRect: " << "X:" << moveCoord.first
-                    << " Y:" << moveCoord.second << "\n";
+            << " Y:" << srcCoord.second<< "\n MoveRect: " << "X:" << moveCoord.first
+            << " Y:" << moveCoord.second << "\n";
 }
